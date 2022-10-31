@@ -19,10 +19,14 @@ const LandingPage = () => {
     const { email, password } = input;
 
     axios
-      .post("https://backenddeploy-production.up.railway.app/login", {
-        email,
-        password,
-      })
+      .post(
+        "https://backenddeploy-production.up.railway.app/login",
+        { withCredentials: true },
+        {
+          email,
+          password,
+        }
+      )
       .then(async (res) => {
         const { token } = res.data;
         sessionStorage.setItem("token", token);

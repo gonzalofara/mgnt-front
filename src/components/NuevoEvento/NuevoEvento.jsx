@@ -46,6 +46,7 @@ const NuevoEvento = () => {
         axios
           .post(
             "https://backenddeploy-production.up.railway.app/eventos",
+            { withCredentials: true },
             evento
           )
           .then((res) => {

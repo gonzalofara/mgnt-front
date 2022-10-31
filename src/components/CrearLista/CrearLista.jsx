@@ -60,6 +60,7 @@ const CrearLista = (props) => {
           axios
             .post(
               `https://backenddeploy-production.up.railway.app/invitados/${id}`,
+              { withCredentials: true },
               [lista, listName]
             )
             .then((res) => {
