@@ -49,7 +49,6 @@ const NuevoInvitado = (props) => {
           axios
             .post(
               `https://backenddeploy-production.up.railway.app/invitados/${id}`,
-              { withCredentials: true },
               [[invitado], { listName: invitado?.list_name }]
             )
             .then((res) => {

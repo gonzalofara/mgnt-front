@@ -13,8 +13,7 @@ export function getAllEvents() {
   return async function (dispatch) {
     try {
       const events = await axios.get(
-        "https://backenddeploy-production.up.railway.app/eventos",
-        { withCredentials: true }
+        "https://backenddeploy-production.up.railway.app/eventos"
       );
       return dispatch({
         type: GET_ALL_EVENTS,
@@ -29,8 +28,7 @@ export function getEventDetail(id) {
   return async function (dispatch) {
     try {
       const events = await axios.get(
-        "https://backenddeploy-production.up.railway.app/eventos/" + id,
-        { withCredentials: true }
+        "https://backenddeploy-production.up.railway.app/eventos/" + id
       );
       return dispatch({
         type: GET_EVENT_DETAIL,
@@ -47,7 +45,6 @@ export function setEventStatus(id, status, archived) {
       try {
         const events = await axios.patch(
           "https://backenddeploy-production.up.railway.app/eventos/" + id,
-          { withCredentials: true },
           status
         );
         return dispatch({
@@ -61,7 +58,6 @@ export function setEventStatus(id, status, archived) {
       try {
         const events = await axios.patch(
           "https://backenddeploy-production.up.railway.app/eventos/" + id,
-          { withCredentials: true },
           archived
         );
         return dispatch({
@@ -80,7 +76,6 @@ export function setInvitadoStatus(id, status) {
     try {
       const invitado = await axios.patch(
         "https://backenddeploy-production.up.railway.app/invitados/" + id,
-        { withCredentials: true },
         status
       );
       return dispatch({
@@ -114,7 +109,6 @@ export function postEvents(evento) {
     try {
       var json = await axios.post(
         "https://backenddeploy-production.up.railway.app/eventos",
-        { withCredentials: true },
         evento
       );
       console.log(json.data);
@@ -129,7 +123,6 @@ export function createList(id, lista) {
     return async function (dispatch) {
       return await axios.post(
         `https://backenddeploy-production.up.railway.app/invitados/${id}`,
-        { withCredentials: true },
         lista
       );
     };
@@ -141,8 +134,7 @@ export function getInvitado(id) {
   try {
     return async function (dispatch) {
       const invitado = await axios.get(
-        `https://backenddeploy-production.up.railway.app/invitados/${id}`,
-        { withCredentials: true }
+        `https://backenddeploy-production.up.railway.app/invitados/${id}`
       );
       return dispatch({
         type: GET_INVITADO,
