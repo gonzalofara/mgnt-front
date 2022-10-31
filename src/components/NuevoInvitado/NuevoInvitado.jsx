@@ -47,10 +47,10 @@ const NuevoInvitado = (props) => {
       }).then((result) => {
         if (result.isConfirmed) {
           axios
-            .post(`http://localhost:3001/invitados/${id}`, [
-              [invitado],
-              { listName: invitado?.list_name },
-            ])
+            .post(
+              `https://backenddeploy-production.up.railway.app/invitados/${id}`,
+              [[invitado], { listName: invitado?.list_name }]
+            )
             .then((res) => {
               Swal.fire({
                 title: "Invitado agregado correctamente",

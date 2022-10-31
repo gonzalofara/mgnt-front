@@ -58,7 +58,10 @@ const CrearLista = (props) => {
       }).then((result) => {
         if (result.isConfirmed) {
           axios
-            .post(`http://localhost:3001/invitados/${id}`, [lista, listName])
+            .post(
+              `https://backenddeploy-production.up.railway.app/invitados/${id}`,
+              [lista, listName]
+            )
             .then((res) => {
               Swal.fire({
                 title: "Lista creada correctamente",

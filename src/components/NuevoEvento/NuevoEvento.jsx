@@ -44,7 +44,10 @@ const NuevoEvento = () => {
       if (result.isConfirmed) {
         // dispatch(postEvents(evento));
         axios
-          .post("http://localhost:3001/eventos", evento)
+          .post(
+            "https://backenddeploy-production.up.railway.app/eventos",
+            evento
+          )
           .then((res) => {
             Swal.fire({
               title: "Evento creado correctamente!",

@@ -19,7 +19,10 @@ const LandingPage = () => {
     const { email, password } = input;
 
     axios
-      .post("http://localhost:3001/login", { email, password })
+      .post("https://backenddeploy-production.up.railway.app//login", {
+        email,
+        password,
+      })
       .then(async (res) => {
         const { token } = res.data;
         sessionStorage.setItem("token", token);
